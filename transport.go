@@ -528,11 +528,10 @@ func (t *Transport) roundTrip(req *Request) (*Response, error) {
 	isHTTP := scheme == "http" || scheme == "https"
 	if isHTTP {
 		for k, vv := range req.Header {
-			// SWEETFREEDOM
-			/*if !httpguts.ValidHeaderFieldName(k) {
+			if !httpguts.ValidHeaderFieldName(k) {
 				req.closeBody()
 				return nil, fmt.Errorf("net/http: invalid header field name %q", k)
-			}*/
+			}
 			for _, v := range vv {
 				if !httpguts.ValidHeaderFieldValue(v) {
 					req.closeBody()
