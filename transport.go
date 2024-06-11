@@ -530,7 +530,7 @@ func (t *Transport) roundTrip(req *Request) (*Response, error) {
 		for k, vv := range req.Header {
 			if !httpguts.ValidHeaderFieldName(k) {
 				req.closeBody()
-				return nil, fmt.Errorf("net/http: invalid header field name %q", k)
+				return nil, fmt.Errorf("TEST net/http: invalid header field name %q", k)
 			}
 			for _, v := range vv {
 				if !httpguts.ValidHeaderFieldValue(v) {
