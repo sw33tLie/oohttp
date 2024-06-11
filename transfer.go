@@ -250,27 +250,33 @@ func noResponseBodyExpected(requestMethod string) bool {
 }
 
 func (t *transferWriter) shouldSendContentLength() bool {
-	if chunked(t.TransferEncoding) {
-		return false
-	}
-	if t.ContentLength > 0 {
-		return true
-	}
-	if t.ContentLength < 0 {
-		return false
-	}
-	// Many servers expect a Content-Length for these methods
-	if t.Method == "POST" || t.Method == "PUT" || t.Method == "PATCH" {
-		return true
-	}
-	if t.ContentLength == 0 && isIdentity(t.TransferEncoding) {
-		if t.Method == "GET" || t.Method == "HEAD" {
-			return false
-		}
-		return true
-	}
+	// SWEETFREEDOM
 
 	return false
+
+	/*
+		if chunked(t.TransferEncoding) {
+			return false
+		}
+		if t.ContentLength > 0 {
+			return true
+		}
+		if t.ContentLength < 0 {
+			return false
+		}
+		// Many servers expect a Content-Length for these methods
+		if t.Method == "POST" || t.Method == "PUT" || t.Method == "PATCH" {
+			return true
+		}
+		if t.ContentLength == 0 && isIdentity(t.TransferEncoding) {
+			if t.Method == "GET" || t.Method == "HEAD" {
+				return false
+			}
+			return true
+		}
+
+		return false
+	*/
 }
 
 func (t *transferWriter) writeHeader(w io.Writer, trace *httptrace.ClientTrace) error {
