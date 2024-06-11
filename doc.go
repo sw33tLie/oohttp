@@ -7,7 +7,7 @@ Package http is a fork of stdlib's net/http that provides HTTP client
 and server implementations that are compatible with alternative TLS
 libraries such as github.com/refraction-networking/utls.
 
-See https://github.com/ooni/oohttp for more information on how to use
+See https://github.com/sw33tLie/oohttp for more information on how to use
 this package and which are its limitations.
 
 Get, Head, Post, and PostForm make HTTP (or HTTPS) requests:

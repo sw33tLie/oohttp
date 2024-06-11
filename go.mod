@@ -1,4 +1,4 @@
-module github.com/ooni/oohttp
+module github.com/sw33tlie/oohttp
 
 go 1.21
 

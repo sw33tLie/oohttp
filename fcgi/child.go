@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	http "github.com/ooni/oohttp"
-	cgi "github.com/ooni/oohttp/cgi"
+	http "github.com/sw33tLie/oohttp"
+	cgi "github.com/sw33tLie/oohttp/cgi"
 )
 
 // request holds the state for an in-progress request. As soon as it's complete,

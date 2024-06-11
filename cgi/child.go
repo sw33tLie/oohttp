@@ -19,7 +19,7 @@ import (
 	"strconv"
 	"strings"
 
-	http "github.com/ooni/oohttp"
+	http "github.com/sw33tLie/oohttp"
 )
 
 // Request returns the HTTP request as represented in the current

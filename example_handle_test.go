@@ -9,7 +9,7 @@ import (
 	"log"
 	"sync"
 
-	http "github.com/ooni/oohttp"
+	http "github.com/sw33tLie/oohttp"
 )
 
 type countHandler struct {

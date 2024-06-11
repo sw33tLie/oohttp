@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	fakerace "github.com/ooni/oohttp/internal/fakerace"
+	fakerace "github.com/sw33tLie/oohttp/internal/fakerace"
 )
 
 var headerWriteTests = []struct {
@@ -218,7 +218,7 @@ func BenchmarkHeaderWriteSubset(b *testing.B) {
 }
 
 func TestHeaderWriteSubsetAllocs(t *testing.T) {
-	t.Skip("test disabled in the github.com/ooni/oohttp fork")
+	t.Skip("test disabled in the github.com/sw33tLie/oohttp fork")
 	if testing.Short() {
 		t.Skip("skipping alloc test in short mode")
 	}

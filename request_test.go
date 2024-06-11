@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/ooni/oohttp"
+	. "github.com/sw33tLie/oohttp"
 )
 
 func TestQuery(t *testing.T) {

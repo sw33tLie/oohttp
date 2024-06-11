@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	oohttp "github.com/ooni/oohttp"
-	"github.com/ooni/oohttp/example/internal/ja3x"
+	oohttp "github.com/sw33tLie/oohttp"
+	"github.com/sw33tLie/oohttp/example/internal/ja3x"
 	utls "github.com/refraction-networking/utls"
 )
 

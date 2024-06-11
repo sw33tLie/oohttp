@@ -12,7 +12,7 @@ import (
 	"net/textproto"
 	"sync"
 
-	http "github.com/ooni/oohttp"
+	http "github.com/sw33tLie/oohttp"
 )
 
 var (

@@ -14,7 +14,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/ooni/oohttp"
+	. "github.com/sw33tLie/oohttp"
 )
 
 var sniffTests = []struct {

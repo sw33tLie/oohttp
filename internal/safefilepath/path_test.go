@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ooni/oohttp/internal/safefilepath"
+	"github.com/sw33tLie/oohttp/internal/safefilepath"
 )
 
 type PathTest struct {

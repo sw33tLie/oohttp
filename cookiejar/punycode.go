@@ -11,7 +11,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	ascii "github.com/ooni/oohttp/internal/ascii"
+	ascii "github.com/sw33tLie/oohttp/internal/ascii"
 )
 
 // These parameter values are specified in section 5.

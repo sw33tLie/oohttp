@@ -25,10 +25,10 @@ import (
 	"testing"
 	"time"
 
-	http "github.com/ooni/oohttp"
-	httptest "github.com/ooni/oohttp/httptest"
-	httptrace "github.com/ooni/oohttp/httptrace"
-	ascii "github.com/ooni/oohttp/internal/ascii"
+	http "github.com/sw33tLie/oohttp"
+	httptest "github.com/sw33tLie/oohttp/httptest"
+	httptrace "github.com/sw33tLie/oohttp/httptrace"
+	ascii "github.com/sw33tLie/oohttp/internal/ascii"
 )
 
 const fakeHopHeader = "X-Fake-Hop-Header-For-Test"

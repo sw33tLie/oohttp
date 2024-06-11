@@ -17,7 +17,7 @@ import (
 	"strings"
 	"testing"
 
-	testenv "github.com/ooni/oohttp/internal/testenv"
+	testenv "github.com/sw33tLie/oohttp/internal/testenv"
 )
 
 func TestForeachHeaderElement(t *testing.T) {
@@ -54,7 +54,7 @@ func TestForeachHeaderElement(t *testing.T) {
 // This catches accidental dependencies between the HTTP transport and
 // server code.
 func TestCmdGoNoHTTPServer(t *testing.T) {
-	t.Skip("test disabled in the github.com/ooni/oohttp fork")
+	t.Skip("test disabled in the github.com/sw33tLie/oohttp fork")
 	t.Parallel()
 	goBin := testenv.GoToolPath(t)
 	out, err := exec.Command(goBin, "tool", "nm", goBin).CombinedOutput()
@@ -86,7 +86,7 @@ func TestCmdGoNoHTTPServer(t *testing.T) {
 // Tests that the nethttpomithttp2 build tag doesn't rot too much,
 // even if there's not a regular builder on it.
 func TestOmitHTTP2(t *testing.T) {
-	t.Skip("test disabled in the github.com/ooni/oohttp fork")
+	t.Skip("test disabled in the github.com/sw33tLie/oohttp fork")
 	if testing.Short() {
 		t.Skip("skipping in short mode")
 	}
@@ -102,7 +102,7 @@ func TestOmitHTTP2(t *testing.T) {
 // in short mode.
 // The TestOmitHTTP2 test above actually runs tests (in long mode).
 func TestOmitHTTP2Vet(t *testing.T) {
-	t.Skip("test disabled in the github.com/ooni/oohttp fork")
+	t.Skip("test disabled in the github.com/sw33tLie/oohttp fork")
 	t.Parallel()
 	goTool := testenv.GoToolPath(t)
 	out, err := exec.Command(goTool, "vet", "-tags=nethttpomithttp2", "net/http").CombinedOutput()

@@ -38,11 +38,11 @@ import (
 	"testing/iotest"
 	"time"
 
-	. "github.com/ooni/oohttp"
-	httptest "github.com/ooni/oohttp/httptest"
-	httptrace "github.com/ooni/oohttp/httptrace"
-	httputil "github.com/ooni/oohttp/httputil"
-	testcert "github.com/ooni/oohttp/internal/testcert"
+	. "github.com/sw33tLie/oohttp"
+	httptest "github.com/sw33tLie/oohttp/httptest"
+	httptrace "github.com/sw33tLie/oohttp/httptrace"
+	httputil "github.com/sw33tLie/oohttp/httputil"
+	testcert "github.com/sw33tLie/oohttp/internal/testcert"
 	"golang.org/x/net/http/httpguts"
 )
 

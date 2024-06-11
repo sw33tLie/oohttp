@@ -25,7 +25,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ooni/oohttp/internal/ascii"
+	"github.com/sw33tLie/oohttp/internal/ascii"
 )
 
 // A Client is an HTTP client. Its zero value (DefaultClient) is a

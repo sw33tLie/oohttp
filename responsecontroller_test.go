@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/ooni/oohttp"
+	. "github.com/sw33tLie/oohttp"
 )
 
 func TestResponseControllerFlush(t *testing.T) { run(t, testResponseControllerFlush) }

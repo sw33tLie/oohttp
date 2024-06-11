@@ -9,8 +9,8 @@ import (
 	"net"
 	"net/http"
 
-	oohttp "github.com/ooni/oohttp"
-	"github.com/ooni/oohttp/example/internal/utlsx"
+	oohttp "github.com/sw33tLie/oohttp"
+	"github.com/sw33tLie/oohttp/example/internal/utlsx"
 )
 
 // newTransport returns a new http.Transport using the provided tls dialer.

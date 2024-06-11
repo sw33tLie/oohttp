@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"time"
 
-	oohttp "github.com/ooni/oohttp"
-	"github.com/ooni/oohttp/example/internal/runtimex"
+	oohttp "github.com/sw33tLie/oohttp"
+	"github.com/sw33tLie/oohttp/example/internal/runtimex"
 	utls "github.com/refraction-networking/utls"
 )
 

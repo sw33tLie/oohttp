@@ -17,7 +17,7 @@ import (
 	"time"
 
 	"github.com/google/martian/v3/mitm"
-	"github.com/ooni/oohttp/example/internal/runtimex"
+	"github.com/sw33tLie/oohttp/example/internal/runtimex"
 	"golang.org/x/net/http2"
 )
 

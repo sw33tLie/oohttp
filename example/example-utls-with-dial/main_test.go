@@ -11,9 +11,9 @@ import (
 	"sync"
 	"testing"
 
-	oohttp "github.com/ooni/oohttp"
-	"github.com/ooni/oohttp/example/internal/ja3x"
-	"github.com/ooni/oohttp/example/internal/utlsx"
+	oohttp "github.com/sw33tLie/oohttp"
+	"github.com/sw33tLie/oohttp/example/internal/ja3x"
+	"github.com/sw33tLie/oohttp/example/internal/utlsx"
 )
 
 // tlsDialerRecorder performs TLS dials and records the ALPN.
