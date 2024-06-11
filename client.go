@@ -455,6 +455,7 @@ func basicAuth(username, password string) string {
 // To make a request with a specified context.Context, use NewRequestWithContext
 // and DefaultClient.Do.
 func Get(url string) (resp *Response, err error) {
+	fmt.Print("CUSTOMMMMM")
 	return DefaultClient.Get(url)
 }
 
