@@ -30,7 +30,6 @@ import (
 
 	httptrace "github.com/sw33tLie/oohttp/httptrace"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"
-	"golang.org/x/net/http/httpguts"
 	"golang.org/x/net/http/httpproxy"
 )
 
@@ -526,22 +525,27 @@ func (t *Transport) roundTrip(req *Request) (*Response, error) {
 	}
 	scheme := req.URL.Scheme
 	isHTTP := scheme == "http" || scheme == "https"
-	if isHTTP {
-		for k, vv := range req.Header {
-			fmt.Println(!httpguts.ValidHeaderFieldName(k))
-			if !httpguts.ValidHeaderFieldName(k) {
-				req.closeBody()
-				return nil, fmt.Errorf("TEST net/http: invalid header field name %q", k)
-			}
-			for _, v := range vv {
-				if !httpguts.ValidHeaderFieldValue(v) {
-					req.closeBody()
-					// Don't include the value in the error, because it may be sensitive.
-					return nil, fmt.Errorf("net/http: invalid header field value for %q", k)
-				}
+	// SWEETFREEDOM
+
+	/*
+		if isHTTP {
+			for k, vv := range req.Header {
+
+						if !httpguts.ValidHeaderFieldName(k) {
+							req.closeBody()
+							return nil, fmt.Errorf("net/http: invalid header field name %q", k)
+						}
+					for _, v := range vv {
+						if !httpguts.ValidHeaderFieldValue(v) {
+							req.closeBody()
+							// Don't include the value in the error, because it may be sensitive.
+							return nil, fmt.Errorf("net/http: invalid header field value for %q", k)
+						}
+					}
+
 			}
 		}
-	}
+	*/
 
 	origReq := req
 	cancelKey := cancelKey{origReq}

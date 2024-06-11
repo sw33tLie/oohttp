@@ -1018,16 +1018,21 @@ func (c *conn) readRequest(ctx context.Context) (w *response, err error) {
 	if len(hosts) == 1 && !httpguts.ValidHostHeader(hosts[0]) {
 		return nil, badRequestError("malformed Host header")
 	}
-	for k, vv := range req.Header {
-		if !httpguts.ValidHeaderFieldName(k) {
-			return nil, badRequestError("invalid header name")
+	// SWEETFREEDOM
+	/*
+		for k, vv := range req.Header {
+
+				if !httpguts.ValidHeaderFieldName(k) {
+					return nil, badRequestError("invalid header name")
+				}
+				for _, v := range vv {
+					if !httpguts.ValidHeaderFieldValue(v) {
+						return nil, badRequestError("invalid header value")
+					}
+				}
 		}
-		for _, v := range vv {
-			if !httpguts.ValidHeaderFieldValue(v) {
-				return nil, badRequestError("invalid header value")
-			}
-		}
-	}
+	*/
+
 	delete(req.Header, "Host")
 
 	ctx, cancelCtx := context.WithCancel(ctx)
