@@ -1074,9 +1074,11 @@ func readRequest(b *bufio.Reader) (req *Request, err error) {
 		rawurl = "http://" + rawurl
 	}
 
-	if req.URL, err = url.ParseRequestURI(rawurl); err != nil {
+	// SWEETFREEDOM
+	req.URL = &url.URL{Path: rawurl}
+	/*if req.URL, err = url.ParseRequestURI(rawurl); err != nil {
 		return nil, err
-	}
+	}*/
 
 	if justAuthority {
 		// Strip the bogus "http://" back off.
