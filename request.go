@@ -1247,7 +1247,10 @@ func parsePostForm(r *Request) (vs url.Values, err error) {
 			err = errors.New("http: POST too large")
 			return
 		}
+		fmt.Println("AAA")
 		vs, e = url.ParseQuery(string(b))
+		fmt.Println("BBB")
+
 		if err == nil {
 			err = e
 		}
@@ -1298,7 +1301,11 @@ func (r *Request) ParseForm() error {
 		var newValues url.Values
 		if r.URL != nil {
 			var e error
+			fmt.Println("CCC")
+
 			newValues, e = url.ParseQuery(r.URL.RawQuery)
+			fmt.Println("DDD")
+
 			if err == nil {
 				err = e
 			}
