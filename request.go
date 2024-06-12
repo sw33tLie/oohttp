@@ -621,7 +621,7 @@ func (r *Request) write(w io.Writer, usingProxy bool, extraHeaders Header, waitF
 	// to an outgoing URI.
 	host = removeZone(host)
 
-	ruri := r.URL.EscapedPath()
+	ruri := r.URL.RequestURI()
 	if usingProxy && r.URL.Scheme != "" && r.URL.Opaque == "" {
 		ruri = r.URL.Scheme + "://" + host + ruri
 	} else if r.Method == "CONNECT" && r.URL.Path == "" {
@@ -854,15 +854,13 @@ func parseURLWithoutValidation(rawURL string) *urlpkg.URL {
 	hostSplit := strings.SplitN(rawURL, "/", 2)
 	u.Host = hostSplit[0]
 	if len(hostSplit) == 2 {
-		u.RawPath = "/" + hostSplit[1]
-		u.Path = u.RawPath // This ensures that Path and RawPath are consistent
+		u.Path = "/" + hostSplit[1]
 	}
 
 	// Parse query parameters if present
-	if queryIndex := strings.Index(u.RawPath, "?"); queryIndex != -1 {
-		u.RawQuery = u.RawPath[queryIndex+1:]
-		u.RawPath = u.RawPath[:queryIndex]
-		u.Path = u.RawPath // Update Path to match RawPath
+	if queryIndex := strings.Index(u.Path, "?"); queryIndex != -1 {
+		u.RawQuery = u.Path[queryIndex+1:]
+		u.Path = u.Path[:queryIndex]
 	}
 
 	return u
