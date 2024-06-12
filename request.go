@@ -854,13 +854,15 @@ func parseURLWithoutValidation(rawURL string) *urlpkg.URL {
 	hostSplit := strings.SplitN(rawURL, "/", 2)
 	u.Host = hostSplit[0]
 	if len(hostSplit) == 2 {
-		u.Path = "/" + hostSplit[1]
+		u.RawPath = "/" + hostSplit[1]
+		u.Path = u.RawPath // This ensures that Path and RawPath are consistent
 	}
 
 	// Parse query parameters if present
-	if queryIndex := strings.Index(u.Path, "?"); queryIndex != -1 {
-		u.RawQuery = u.Path[queryIndex+1:]
-		u.Path = u.Path[:queryIndex]
+	if queryIndex := strings.Index(u.RawPath, "?"); queryIndex != -1 {
+		u.RawQuery = u.RawPath[queryIndex+1:]
+		u.RawPath = u.RawPath[:queryIndex]
+		u.Path = u.RawPath // Update Path to match RawPath
 	}
 
 	return u
