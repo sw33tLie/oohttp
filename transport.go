@@ -31,7 +31,6 @@ import (
 
 	httptrace "github.com/sw33tLie/oohttp/httptrace"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"
-	"golang.org/x/net/http/httpproxy"
 )
 
 // DefaultTransport is the default implementation of Transport and is
@@ -840,7 +839,7 @@ var (
 // environment variable to determine the proxy address.
 func envProxyFunc() func(*url.URL) (*url.URL, error) {
 	envProxyOnce.Do(func() {
-		envProxyFuncValue = httpproxy.FromEnvironment().ProxyFunc()
+		//envProxyFuncValue = httpproxy.FromEnvironment().ProxyFunc()
 	})
 	return envProxyFuncValue
 }
