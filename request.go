@@ -860,7 +860,7 @@ func CustomParseURL(rawurl string) (*urlpkg.URL, error) {
 	var host, path string
 	if slashIndex != -1 {
 		host = rest[:slashIndex]
-		path = rest[slashIndex:]
+		path = rest[slashIndex+1:] // Omit the leading slash for Opaque
 	} else {
 		host = rest
 		path = ""
