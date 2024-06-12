@@ -839,6 +839,7 @@ var (
 // environment variable to determine the proxy address.
 func envProxyFunc() func(*url.URL) (*url.URL, error) {
 	envProxyOnce.Do(func() {
+		// TOTO fix
 		//envProxyFuncValue = httpproxy.FromEnvironment().ProxyFunc()
 	})
 	return envProxyFuncValue
