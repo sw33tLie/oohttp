@@ -96,9 +96,9 @@ func badStringError(what, val string) error { return fmt.Errorf("%s %q", what, v
 
 // Headers that Request.Write handles itself and should be skipped.
 var reqWriteExcludeHeader = map[string]bool{
-	"Host":              true, // not in Header map anyway
-	"User-Agent":        true,
-	"Content-Length":    true,
+	"Host":       true, // not in Header map anyway
+	"User-Agent": true,
+	//"Content-Length":    true,
 	"Transfer-Encoding": true,
 	"Trailer":           true,
 }
