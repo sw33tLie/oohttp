@@ -839,33 +839,6 @@ func NewRequest(method, url string, body io.Reader) (*Request, error) {
 	return NewRequestWithContext(context.Background(), method, url, body)
 }
 
-// SWEETFREEDOM (doesnt work still encoding %)
-func parseURLWithoutValidation(rawURL string) *urlpkg.URL {
-	u := &urlpkg.URL{}
-
-	// Split the URL into scheme and the rest
-	schemeSplit := strings.SplitN(rawURL, "://", 2)
-	if len(schemeSplit) == 2 {
-		u.Scheme = schemeSplit[0]
-		rawURL = schemeSplit[1]
-	}
-
-	// Split the rest into host and path
-	hostSplit := strings.SplitN(rawURL, "/", 2)
-	u.Host = hostSplit[0]
-	if len(hostSplit) == 2 {
-		u.Path = "/" + hostSplit[1]
-	}
-
-	// Parse query parameters if present
-	if queryIndex := strings.Index(u.Path, "?"); queryIndex != -1 {
-		u.RawQuery = u.Path[queryIndex+1:]
-		u.Path = u.Path[:queryIndex]
-	}
-
-	return u
-}
-
 // NewRequestWithContext returns a new Request given a method, URL, and
 // optional body.
 //
@@ -903,9 +876,7 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 	}
 
 	// SWEETFREEDOM
-	//u := &urlpkg.URL{Path: url}
-	u := parseURLWithoutValidation(url)
-	u.Opaque = "/%9v"
+	u := &urlpkg.URL{Opaque: url}
 	/*if err != nil {
 		return nil, err
 	}*/
