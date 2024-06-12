@@ -801,7 +801,6 @@ func (c switchProtocolCopier) copyToBackend(errc chan<- error) {
 }
 
 func cleanQueryParams(s string) string {
-	fmt.Println("HELLO")
 	reencode := func(s string) string {
 		v, _ := url.ParseQuery(s)
 		return v.Encode()
