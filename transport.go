@@ -2656,11 +2656,12 @@ func (pc *persistConn) roundTrip(req *transportRequest) (resp *Response, err err
 		continueCh = make(chan struct{}, 1)
 	}
 
-	if pc.t.DisableKeepAlives &&
-		!req.wantsClose() &&
-		!isProtocolSwitchHeader(req.Header) {
-		req.extraHeaders().Set("Connection", "close")
-	}
+	// Remove the automatic setting of the Connection header
+	// if pc.t.DisableKeepAlives &&
+	//     !req.wantsClose() &&
+	//     !isProtocolSwitchHeader(req.Header) {
+	//     req.extraHeaders().Set("Connection", "close")
+	// }
 
 	gone := make(chan struct{})
 	defer close(gone)
