@@ -14,10 +14,11 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"net/url"
 	"os"
 	"strconv"
 	"strings"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 )

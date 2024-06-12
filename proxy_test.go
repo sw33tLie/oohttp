@@ -5,9 +5,10 @@
 package http
 
 import (
-	"net/url"
 	"os"
 	"testing"
+
+	url "github.com/sw33tLie/neturl"
 )
 
 // TODO(mattn):

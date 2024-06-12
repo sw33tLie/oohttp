@@ -11,11 +11,12 @@ import (
 	"context"
 	"fmt"
 	"net"
-	"net/url"
 	"sort"
 	"sync"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 )
 
 var (

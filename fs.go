@@ -14,7 +14,6 @@ import (
 	"mime"
 	"mime/multipart"
 	"net/textproto"
-	"net/url"
 	"os"
 	"path"
 	"path/filepath"
@@ -22,6 +21,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	safefilepath "github.com/sw33tLie/oohttp/internal/safefilepath"
 )

@@ -18,8 +18,6 @@ import (
 	"math/rand"
 	"net"
 	"net/textproto"
-	"net/url"
-	urlpkg "net/url"
 	"path"
 	"runtime"
 	"sort"
@@ -28,6 +26,9 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
+	urlpkg "github.com/sw33tLie/neturl"
 
 	"golang.org/x/net/http/httpguts"
 )

@@ -6,11 +6,12 @@ package cookiejar
 
 import (
 	"fmt"
-	"net/url"
 	"sort"
 	"strings"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 )

@@ -15,7 +15,7 @@ import (
 	"io"
 	"math"
 	"mime/multipart"
-	"net/url"
+	url "github.com/sw33tLie/neturl"
 	"os"
 	"reflect"
 	"regexp"

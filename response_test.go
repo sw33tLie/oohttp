@@ -12,11 +12,12 @@ import (
 	"fmt"
 	"go/token"
 	"io"
-	"net/url"
 	"reflect"
 	"regexp"
 	"strings"
 	"testing"
+
+	url "github.com/sw33tLie/neturl"
 
 	"github.com/sw33tLie/oohttp/internal"
 )

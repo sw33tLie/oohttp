@@ -7,10 +7,11 @@ package httptest
 import (
 	"crypto/tls"
 	"io"
-	"net/url"
 	"reflect"
 	"strings"
 	"testing"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 )

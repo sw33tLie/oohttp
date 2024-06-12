@@ -21,12 +21,13 @@ import (
 	"log"
 	"net"
 	"net/textproto"
-	"net/url"
 	"reflect"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	httptrace "github.com/sw33tLie/oohttp/httptrace"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"

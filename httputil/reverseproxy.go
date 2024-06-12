@@ -15,10 +15,11 @@ import (
 	"mime"
 	"net"
 	"net/textproto"
-	"net/url"
 	"strings"
 	"sync"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 	httptrace "github.com/sw33tLie/oohttp/httptrace"

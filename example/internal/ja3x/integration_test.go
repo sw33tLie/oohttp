@@ -5,7 +5,7 @@ import (
 	"errors"
 	"io"
 	"net/http"
-	"net/url"
+	url "github.com/sw33tLie/neturl"
 	"strings"
 	"testing"
 

@@ -8,8 +8,9 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/url"
 	"strings"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 	httptest "github.com/sw33tLie/oohttp/httptest"

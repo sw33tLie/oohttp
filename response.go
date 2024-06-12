@@ -14,9 +14,10 @@ import (
 	"fmt"
 	"io"
 	"net/textproto"
-	"net/url"
 	"strconv"
 	"strings"
+
+	url "github.com/sw33tLie/neturl"
 
 	"golang.org/x/net/http/httpguts"
 )

@@ -36,7 +36,7 @@ import (
 	mathrand "math/rand"
 	"net"
 	"net/textproto"
-	"net/url"
+	url "github.com/sw33tLie/neturl"
 	"os"
 	"reflect"
 	"runtime"

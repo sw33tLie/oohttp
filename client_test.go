@@ -16,7 +16,6 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/url"
 	"reflect"
 	"runtime"
 	"strconv"
@@ -25,6 +24,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	. "github.com/sw33tLie/oohttp"
 	cookiejar "github.com/sw33tLie/oohttp/cookiejar"

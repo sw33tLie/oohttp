@@ -8,7 +8,8 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"net/url"
+
+	url "github.com/sw33tLie/neturl"
 
 	"github.com/armon/go-socks5"
 	oohttp "github.com/sw33tLie/oohttp"

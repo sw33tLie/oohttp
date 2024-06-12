@@ -5,7 +5,7 @@
 package http
 
 import (
-	"net/url"
+	url "github.com/sw33tLie/neturl"
 )
 
 // A CookieJar manages storage and use of cookies in HTTP requests.

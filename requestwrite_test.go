@@ -11,11 +11,12 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"net/url"
 	"strings"
 	"testing"
 	"testing/iotest"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 )
 
 type reqWriteTest struct {

@@ -7,7 +7,8 @@ package cookiejar_test
 import (
 	"fmt"
 	"log"
-	"net/url"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 	cookiejar "github.com/sw33tLie/oohttp/cookiejar"

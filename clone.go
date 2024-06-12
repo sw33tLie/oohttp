@@ -7,7 +7,8 @@ package http
 import (
 	"mime/multipart"
 	"net/textproto"
-	"net/url"
+
+	url "github.com/sw33tLie/neturl"
 )
 
 func cloneURLValues(v url.Values) url.Values {

@@ -7,13 +7,14 @@ import (
 	"io"
 	"net"
 	"net/http"
-	"net/url"
 	"strings"
 	"testing"
 
+	url "github.com/sw33tLie/neturl"
+
+	utls "github.com/refraction-networking/utls"
 	oohttp "github.com/sw33tLie/oohttp"
 	"github.com/sw33tLie/oohttp/example/internal/ja3x"
-	utls "github.com/refraction-networking/utls"
 )
 
 func TestTLSDialerWorkingAsIntended(t *testing.T) {

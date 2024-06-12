@@ -15,7 +15,6 @@ import (
 	"io"
 	"log"
 	"net/textproto"
-	"net/url"
 	"os"
 	"reflect"
 	"sort"
@@ -24,6 +23,8 @@ import (
 	"sync"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 	httptest "github.com/sw33tLie/oohttp/httptest"

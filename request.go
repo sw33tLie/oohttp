@@ -18,11 +18,12 @@ import (
 	"mime"
 	"mime/multipart"
 	"net/textproto"
-	"net/url"
-	urlpkg "net/url"
 	"strconv"
 	"strings"
 	"sync"
+
+	url "github.com/sw33tLie/neturl"
+	urlpkg "github.com/sw33tLie/neturl"
 
 	httptrace "github.com/sw33tLie/oohttp/httptrace"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"
@@ -872,7 +873,6 @@ func CustomParseURL(rawurl string) (*urlpkg.URL, error) {
 		Host:   host,
 		Opaque: path,
 	}
-	fmt.Println("URL: ", u)
 	return u, nil
 }
 

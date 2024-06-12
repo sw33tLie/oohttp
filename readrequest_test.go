@@ -9,10 +9,11 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"net/url"
 	"reflect"
 	"strings"
 	"testing"
+
+	url "github.com/sw33tLie/neturl"
 )
 
 type reqTest struct {

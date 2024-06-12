@@ -21,7 +21,6 @@ import (
 	"math/rand"
 	"mime/multipart"
 	"net"
-	"net/url"
 	"os"
 	"os/exec"
 	"reflect"
@@ -34,6 +33,8 @@ import (
 	"syscall"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	. "github.com/sw33tLie/oohttp"
 	httptest "github.com/sw33tLie/oohttp/httptest"

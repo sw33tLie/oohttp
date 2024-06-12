@@ -9,13 +9,14 @@ package http
 import (
 	"bytes"
 	"io/fs"
-	"net/url"
 	"os"
 	"os/exec"
 	"reflect"
 	"regexp"
 	"strings"
 	"testing"
+
+	url "github.com/sw33tLie/neturl"
 
 	testenv "github.com/sw33tLie/oohttp/internal/testenv"
 )

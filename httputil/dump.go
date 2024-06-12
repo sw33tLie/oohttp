@@ -11,9 +11,10 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"net/url"
 	"strings"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 )

@@ -19,7 +19,6 @@ import (
 	"log"
 	"net"
 	"net/textproto"
-	"net/url"
 	"os"
 	"reflect"
 	"runtime"
@@ -29,6 +28,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	. "github.com/sw33tLie/oohttp"
 	httptest "github.com/sw33tLie/oohttp/httptest"

@@ -11,12 +11,13 @@ import (
 	"fmt"
 	"io"
 	"math/rand"
-	"net/url"
 	"runtime"
 	"runtime/pprof"
 	"strings"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 )

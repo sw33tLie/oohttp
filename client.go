@@ -17,13 +17,14 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/url"
 	"reflect"
 	"sort"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	"github.com/sw33tLie/oohttp/internal/ascii"
 )

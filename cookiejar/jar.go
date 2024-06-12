@@ -9,11 +9,12 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/url"
 	"sort"
 	"strings"
 	"sync"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	http "github.com/sw33tLie/oohttp"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"

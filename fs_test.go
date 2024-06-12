@@ -14,7 +14,6 @@ import (
 	"mime"
 	"mime/multipart"
 	"net"
-	"net/url"
 	"os"
 	"os/exec"
 	"path"
@@ -25,6 +24,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	url "github.com/sw33tLie/neturl"
 
 	. "github.com/sw33tLie/oohttp"
 	httptest "github.com/sw33tLie/oohttp/httptest"

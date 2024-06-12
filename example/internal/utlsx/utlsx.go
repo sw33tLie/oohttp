@@ -6,12 +6,13 @@ import (
 	"crypto/tls"
 	"log"
 	"net"
-	"net/url"
 	"time"
 
+	url "github.com/sw33tLie/neturl"
+
+	utls "github.com/refraction-networking/utls"
 	oohttp "github.com/sw33tLie/oohttp"
 	"github.com/sw33tLie/oohttp/example/internal/runtimex"
-	utls "github.com/refraction-networking/utls"
 )
 
 // connAdapter adapts utls.UConn to the oohttp.TLSConn interface.
