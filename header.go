@@ -5,6 +5,7 @@
 package http
 
 import (
+	"fmt"
 	"io"
 	"net/textproto"
 	"sort"
@@ -241,7 +242,10 @@ func (h Header) writeSubset(w io.Writer, exclude map[string]bool, trace *httptra
 // returned without modifications.
 
 // SWEETFREEDOM
-func CanonicalHeaderKey(s string) string { return s }
+func CanonicalHeaderKey(s string) string {
+	fmt.Println("Test")
+	return s
+}
 
 //func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
 
