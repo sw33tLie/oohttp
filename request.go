@@ -874,10 +874,16 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 	if ctx == nil {
 		return nil, errors.New("net/http: nil Context")
 	}
-	u, err := urlpkg.Parse(url)
-	if err != nil {
-		return nil, err
-	}
+
+	// SWEETFREEDOM
+	u := &urlpkg.URL{Path: url}
+	/*
+		u, err := urlpkg.Parse(url)
+		if err != nil {
+			return nil, err
+		}
+	*/
+
 	rc, ok := body.(io.ReadCloser)
 	if !ok && body != nil {
 		rc = io.NopCloser(body)
