@@ -860,7 +860,7 @@ func CustomParseURL(rawurl string) (*urlpkg.URL, error) {
 	var host, path string
 	if slashIndex != -1 {
 		host = rest[:slashIndex]
-		path = rest[slashIndex+1:] // Omit the leading slash for Opaque
+		path = rest[slashIndex:]
 	} else {
 		host = rest
 		path = ""
@@ -911,7 +911,6 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 	if ctx == nil {
 		return nil, errors.New("net/http: nil Context")
 	}
-	// SWEETFREEDOM
 	u, err := CustomParseURL(url)
 	if err != nil {
 		return nil, err
