@@ -839,7 +839,7 @@ func NewRequest(method, url string, body io.Reader) (*Request, error) {
 	return NewRequestWithContext(context.Background(), method, url, body)
 }
 
-// SWEETFREEDOM
+// SWEETFREEDOM (doesnt work still encoding %)
 func parseURLWithoutValidation(rawURL string) *urlpkg.URL {
 	u := &urlpkg.URL{}
 
@@ -905,6 +905,7 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 	// SWEETFREEDOM
 	//u := &urlpkg.URL{Path: url}
 	u := parseURLWithoutValidation(url)
+	u.Opaque = "/%9v"
 	/*if err != nil {
 		return nil, err
 	}*/
