@@ -3,7 +3,7 @@ module github.com/sw33tLie/oohttp
 go 1.21.1
 
 require (
-	github.com/sw33tLie/neturl v0.0.0-20240612114651-fc55360f1eb1
+	github.com/sw33tLie/neturl v0.0.0-20240612122703-b61e29214b2b
 	golang.org/x/net v0.22.0
 )
 

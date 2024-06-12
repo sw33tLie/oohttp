@@ -1,5 +1,7 @@
 github.com/sw33tLie/neturl v0.0.0-20240612114651-fc55360f1eb1 h1:TjcGPvwyh1DWKUkoLtc1gIFiVkRedIrdA9E3gHo+MSA=
 github.com/sw33tLie/neturl v0.0.0-20240612114651-fc55360f1eb1/go.mod h1:ZK0hhv1O01Oib81+GqP/8UUB4KIphmpiCwq45UEAKHA=
+github.com/sw33tLie/neturl v0.0.0-20240612122703-b61e29214b2b h1:98hVSlUgELwdu7URul/SJ/Qf+HmmrmkHVmNtlOSebVw=
+github.com/sw33tLie/neturl v0.0.0-20240612122703-b61e29214b2b/go.mod h1:ZK0hhv1O01Oib81+GqP/8UUB4KIphmpiCwq45UEAKHA=
 golang.org/x/net v0.22.0 h1:9sGLhx7iRIHEiX0oAJ3MRZMUCElJgy7Br1nO+AMN3Tc=
 golang.org/x/net v0.22.0/go.mod h1:JKghWKKOSdJwpW2GEx0Ja7fmaKnMsbu+MWVZTokSYmg=
 golang.org/x/text v0.14.0 h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
