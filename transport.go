@@ -27,7 +27,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	ogurl "net/url"
+
 	url "github.com/sw33tLie/neturl"
+	"golang.org/x/net/http/httpproxy"
 
 	httptrace "github.com/sw33tLie/oohttp/httptrace"
 	ascii "github.com/sw33tLie/oohttp/internal/ascii"
@@ -835,12 +838,50 @@ var (
 	envProxyFuncValue func(*url.URL) (*url.URL, error)
 )
 
+// TODO check idk what i'm doing YOLO
+
+// Convert standard net/url.URL to custom github.com/sw33tLie/neturl.URL
+func convertToCustomURL(u *ogurl.URL) *url.URL {
+	return &url.URL{
+		Scheme:     u.Scheme,
+		Opaque:     u.Opaque,
+		User:       url.User(u.User.String()),
+		Host:       u.Host,
+		Path:       u.Path,
+		RawPath:    u.RawPath,
+		ForceQuery: u.ForceQuery,
+		RawQuery:   u.RawQuery,
+		Fragment:   u.Fragment,
+	}
+}
+
 // envProxyFunc returns a function that reads the
 // environment variable to determine the proxy address.
 func envProxyFunc() func(*url.URL) (*url.URL, error) {
 	envProxyOnce.Do(func() {
-		// TODO fix
-		//envProxyFuncValue = httpproxy.FromEnvironment().ProxyFunc()
+		standardProxyFunc := httpproxy.FromEnvironment().ProxyFunc()
+		envProxyFuncValue = func(reqURL *url.URL) (*url.URL, error) {
+			standardURL := &ogurl.URL{
+				Scheme:     reqURL.Scheme,
+				Opaque:     reqURL.Opaque,
+				User:       ogurl.User(reqURL.User.String()),
+				Host:       reqURL.Host,
+				Path:       reqURL.Path,
+				RawPath:    reqURL.RawPath,
+				ForceQuery: reqURL.ForceQuery,
+				RawQuery:   reqURL.RawQuery,
+				Fragment:   reqURL.Fragment,
+			}
+			proxyURL, err := standardProxyFunc(standardURL)
+
+			if err != nil {
+				return nil, err
+			}
+			if proxyURL == nil {
+				return nil, nil
+			}
+			return convertToCustomURL(proxyURL), nil
+		}
 	})
 	return envProxyFuncValue
 }
