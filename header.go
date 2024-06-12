@@ -26,18 +26,38 @@ type Header map[string][]string
 // It appends to any existing values associated with key.
 // The key is case insensitive; it is canonicalized by
 // CanonicalHeaderKey.
+
+// SWEETFREEDOM
 func (h Header) Add(key, value string) {
-	textproto.MIMEHeader(h).Add(key, value)
+	// Check if the key already exists
+	if _, ok := h[key]; ok {
+		// Append the new value to the existing slice
+		h[key] = append(h[key], value)
+	} else {
+		// Create a new slice with the value
+		h[key] = []string{value}
+	}
 }
+
+/*func (h Header) Add(key, value string) {
+	textproto.MIMEHeader(h).Add(key, value)
+}*/
 
 // Set sets the header entries associated with key to the
 // single element value. It replaces any existing values
 // associated with key. The key is case insensitive; it is
 // canonicalized by textproto.CanonicalMIMEHeaderKey.
 // To use non-canonical keys, assign to the map directly.
+
+// SWEETFREEDOM
 func (h Header) Set(key, value string) {
-	textproto.MIMEHeader(h).Set(key, value)
+	// Directly set the key to the single element value slice
+	h[key] = []string{value}
 }
+
+/*func (h Header) Set(key, value string) {
+	textproto.MIMEHeader(h).Set(key, value)
+}*/
 
 // Get gets the first value associated with the given key. If
 // there are no values associated with the key, Get returns "".
@@ -240,7 +260,10 @@ func (h Header) writeSubset(w io.Writer, exclude map[string]bool, trace *httptra
 // If s contains a space or invalid header field bytes, it is
 // returned without modifications.
 
-func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
+// SWEETFREEDOM
+func CanonicalHeaderKey(s string) string { return s }
+
+//func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
 
 // hasToken reports whether token appears with v, ASCII
 // case-insensitive, with space or comma boundaries.
