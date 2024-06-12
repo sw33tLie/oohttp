@@ -840,42 +840,6 @@ func NewRequest(method, url string, body io.Reader) (*Request, error) {
 	return NewRequestWithContext(context.Background(), method, url, body)
 }
 
-// SWEETFREEDOM CustomParseURL is a custom function to parse URLs without strict validation.
-func CustomParseURL(rawurl string) (*urlpkg.URL, error) {
-	u, err := urlpkg.Parse(rawurl)
-	if err == nil {
-		return u, nil
-	}
-
-	// If there's an error, try to parse the scheme and host manually
-	parts := strings.SplitN(rawurl, "://", 2)
-	if len(parts) != 2 {
-		return nil, fmt.Errorf("invalid URL: %s", rawurl)
-	}
-
-	scheme := parts[0]
-	rest := parts[1]
-
-	// Find the first slash to separate host and path
-	slashIndex := strings.Index(rest, "/")
-	var host, path string
-	if slashIndex != -1 {
-		host = rest[:slashIndex]
-		path = rest[slashIndex:]
-	} else {
-		host = rest
-		path = ""
-	}
-
-	// Create a URL with the parsed scheme and host, and set the raw path to Opaque
-	u = &urlpkg.URL{
-		Scheme: scheme,
-		Host:   host,
-		Opaque: path,
-	}
-	return u, nil
-}
-
 // NewRequestWithContext returns a new Request given a method, URL, and
 // optional body.
 //
@@ -911,14 +875,12 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 	if ctx == nil {
 		return nil, errors.New("net/http: nil Context")
 	}
-	u, err := CustomParseURL(url)
+
+	u, err := urlpkg.Parse(url)
 	if err != nil {
 		return nil, err
 	}
-	/*u, err := urlpkg.Parse(url)
-	if err != nil {
-		return nil, err
-	}*/
+
 	rc, ok := body.(io.ReadCloser)
 	if !ok && body != nil {
 		rc = io.NopCloser(body)
