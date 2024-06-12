@@ -621,7 +621,7 @@ func (r *Request) write(w io.Writer, usingProxy bool, extraHeaders Header, waitF
 	// to an outgoing URI.
 	host = removeZone(host)
 
-	ruri := r.URL.RequestURI()
+	ruri := r.URL.EscapedPath()
 	if usingProxy && r.URL.Scheme != "" && r.URL.Opaque == "" {
 		ruri = r.URL.Scheme + "://" + host + ruri
 	} else if r.Method == "CONNECT" && r.URL.Path == "" {
