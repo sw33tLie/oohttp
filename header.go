@@ -239,7 +239,11 @@ func (h Header) writeSubset(w io.Writer, exclude map[string]bool, trace *httptra
 // canonical key for "accept-encoding" is "Accept-Encoding".
 // If s contains a space or invalid header field bytes, it is
 // returned without modifications.
-func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
+
+// SWEETFREEDOM
+func CanonicalHeaderKey(s string) string { return s }
+
+//func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
 
 // hasToken reports whether token appears with v, ASCII
 // case-insensitive, with space or comma boundaries.
