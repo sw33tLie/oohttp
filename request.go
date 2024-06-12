@@ -872,6 +872,7 @@ func CustomParseURL(rawurl string) (*urlpkg.URL, error) {
 		Host:   host,
 		Opaque: path,
 	}
+	fmt.Println("URL: ", u)
 	return u, nil
 }
 
