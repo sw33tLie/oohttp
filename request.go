@@ -623,8 +623,12 @@ func (r *Request) write(w io.Writer, usingProxy bool, extraHeaders Header, waitF
 	host = removeZone(host)
 
 	ruri := r.URL.RequestURI()
-	if usingProxy && r.URL.Scheme != "" && r.URL.Opaque == "" {
-		ruri = r.URL.Scheme + "://" + host + ruri
+	if usingProxy {
+		if r.URL.Opaque != "" {
+			ruri = r.URL.Scheme + ":" + r.URL.Opaque
+		} else if r.URL.Scheme != "" && r.URL.Opaque == "" {
+			ruri = r.URL.Scheme + "://" + host + ruri
+		}
 	} else if r.Method == "CONNECT" && r.URL.Path == "" {
 		// CONNECT requests normally give just the host and port, not a full URL.
 		ruri = host
@@ -632,6 +636,7 @@ func (r *Request) write(w io.Writer, usingProxy bool, extraHeaders Header, waitF
 			ruri = r.URL.Opaque
 		}
 	}
+
 	if stringContainsCTLByte(ruri) {
 		return errors.New("net/http: can't write control character in Request.URL")
 	}
